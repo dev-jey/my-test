@@ -17,6 +17,16 @@ myApp.controller("mainController", ($scope) => {
             $scope.related = null;
         };
     };
+    $scope.toggleRelated = (event, relatedItem) => {
+        if (event.target.checked) {
+            $scope.relatedItem=relatedItem.name;
+            $scope.relatedChoices = relatedItem.choices;
+        } else {
+            $scope.relatedChoices = null;
+            $scope.relatedItem=null;
+            $scope.relatedChoices=null;
+        };
+    };
     
     $scope.menuItems = [
         {

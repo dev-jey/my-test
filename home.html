@@ -25,8 +25,15 @@
 
             <p class="spacer">{{text}}</p>
             <div ng-repeat="item in related" class="spacer">
-                <input type="checkbox" name="choice" ng-click="toggleSelection($event, item)">
+                <input type="checkbox" name="choice" ng-click="toggleRelated($event, item)">
                 <label>{{item.name}}</label>
+
+                <div class="spacer" ng-if="item.name==relatedItem">
+                    <div ng-repeat="relatedChoice in relatedChoices">
+                        <input type="checkbox" name="choice" />
+                        <label>{{relatedChoice.name}}</label>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
