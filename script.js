@@ -4,12 +4,14 @@ const myApp = angular.module("myApp", []);
 
 myApp.controller("mainController", ($scope) => {
     $scope.welcomeMessage = "Welcome To The Restaurant";
-    $scope.toggleSelection = (event, menuItem) => {
+    $scope.toggleSelection = (event, choice, menuItem) => {
         if (event.target.checked) {
-            $scope.text = "You might also like"
             $scope.menuIt=menuItem.name;
+            if(choice=='Greek' || choice=="Minestrone"){
+                $scope.text = "You might also like"
+                $scope.related = menuItem.related;
+            }
             $scope.choices = menuItem.choices;
-            $scope.related = menuItem.related;
         } else {
             $scope.text=null;
             $scope.menuIt = null;

@@ -14,29 +14,29 @@
     {{welcomeMessage}}
     <div ng-repeat="menuItem in menuItems">
         <div>
-            <input type="checkbox" name="menuItem" ng-click="toggleSelection($event, menuItem)">
+            <input type="checkbox" name="menuItem" ng-click="toggleSelection($event, '', menuItem)">
             <label>{{menuItem.name}}</label>
         </div>
         <div ng-if="menuItem.name==menuIt">
-            <div ng-repeat="choice in choices" class="spacer">
-                <input type="checkbox" name="choice" ng-click="toggleSelection($event, menuItem)">
+            <div ng-repeat="choice in choices" class="spacer" ng-init="parentIndex=$index">
+                <input type="checkbox" name="choice" ng-click="toggleSelection($event, choice.name, menuItem)">
                 <label>{{choice.name}}</label>
             </div>
             <div>
                 <p class="spacer">{{text}}</p>
-            <div ng-repeat="item in related" class="spacer">
-                <input type="checkbox" name="choice" ng-click="toggleRelated($event, item)">
-                <label>{{item.name}}</label>
+                <div ng-repeat="item in related" class="spacer">
+                    <input type="checkbox" name="choice" ng-click="toggleRelated($event, item)">
+                    <label>{{item.name}}</label>
 
-                <div class="spacer" ng-if="item.name==relatedItem">
-                    <div ng-repeat="relatedChoice in relatedChoices">
-                        <input type="checkbox" name="choice" />
-                        <label>{{relatedChoice.name}}</label>
+                    <div class="spacer" ng-if="item.name==relatedItem">
+                        <div ng-repeat="relatedChoice in relatedChoices">
+                            <input type="checkbox" name="choice" />
+                            <label>{{relatedChoice.name}}</label>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
-            
+
         </div>
     </div>
 
