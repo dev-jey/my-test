@@ -1,0 +1,45 @@
+True/False
+
+1- CSS properties are case sensitive?
+True
+
+2-  Margin-top or margin-bottom has effect on inline element?
+False
+
+3- If you have a &lt;p&gt; element with font-size: 10rem, will the text be responsive when the user
+resizes / drags the browser window?
+True
+
+4- The pseudo class: checked will select inputs with type radio or checkbox, but not &lt;option&gt;
+elements.
+False
+
+5- The translate () function can move the position of an element on the z-axis.
+True
+
+
+
+Explain
+1- How do you align a p center-center inside a div?
+    To align text in a p element at the center, one can use 'text-align:center'
+    To align a block of text within a paragraphe at the center, one can use 'margin:auto' on the block
+
+2- How can you load css resources conditionally?
+    This can be defined in the logic of the program. For instance, in angularjs,
+    one can use ng-class to define what classes are displayed under what conditions
+
+3- What are the properties related to box model?
+    The content in the box, where the actual content occurs
+    A margin that is responsible of creating a space surrounding the border of the content
+    The padding surrounding the content
+    A border to enclose the padding and the content
+
+4- What are the differences between visibility hidden and display none?
+    For visibility, the component is rendered on the space specified on the page, only that it aint
+    displayed
+    For dispay, the component is not rendered at all
+
+5- How would you implement Modularity in css?
+    By not repeating yourself through reuse of classes
+    Also, one can use other css processors such as sass, which enable one to
+    encapsulate css elements within one component
