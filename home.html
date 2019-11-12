@@ -22,8 +22,8 @@
                 <input type="checkbox" name="choice" ng-click="toggleSelection($event, menuItem)">
                 <label>{{choice.name}}</label>
             </div>
-
-            <p class="spacer">{{text}}</p>
+            <div>
+                <p class="spacer">{{text}}</p>
             <div ng-repeat="item in related" class="spacer">
                 <input type="checkbox" name="choice" ng-click="toggleRelated($event, item)">
                 <label>{{item.name}}</label>
@@ -35,6 +35,8 @@
                     </div>
                 </div>
             </div>
+            </div>
+            
         </div>
     </div>
 
