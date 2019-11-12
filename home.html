@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+
+<body ng-controller="mainController">
+    {{welcomeMessage}}
+    <div ng-repeat="menuItem in menuItems">
+        <div>
+            <input type="checkbox" name="menuItem" ng-click="toggleSelection($event, menuItem)">
+            <label>{{menuItem.name}}</label>
+        </div>
+        <div ng-if="menuItem.name==menuIt">
+            <div ng-repeat="choice in choices" class="spacer">
+                <input type="checkbox" name="choice" ng-click="toggleSelection($event, menuItem)">
+                <label>{{choice.name}}</label>
+            </div>
+
+            <p class="spacer">{{text}}</p>
+            <div ng-repeat="item in related" class="spacer">
+                <input type="checkbox" name="choice" ng-click="toggleSelection($event, item)">
+                <label>{{item.name}}</label>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
