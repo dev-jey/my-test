@@ -17,7 +17,7 @@
             <input type="checkbox" name="menuItem" ng-click="toggleSelection($event, '', menuItem)">
             <label>{{menuItem.name}}</label>
         </div>
-        <div ng-if="menuItem.name==menuIt">
+        <div ng-if="menuItem.name==menuItm">
             <div ng-repeat="choice in choices" class="spacer" ng-init="parentIndex=$index">
                 <input type="checkbox" name="choice" ng-click="toggleSelection($event, choice.name, menuItem)">
                 <label>{{choice.name}}</label>

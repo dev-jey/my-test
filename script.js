@@ -6,30 +6,30 @@ myApp.controller("mainController", ($scope) => {
     $scope.welcomeMessage = "Welcome To The Restaurant";
     $scope.toggleSelection = (event, choice, menuItem) => {
         if (event.target.checked) {
-            $scope.menuIt=menuItem.name;
-            if(choice=='Greek' || choice=="Minestrone"){
+            $scope.menuItm = menuItem.name;
+            if (choice == 'Greek' || choice == "Minestrone") {
                 $scope.text = "You might also like"
                 $scope.related = menuItem.related;
             }
             $scope.choices = menuItem.choices;
         } else {
-            $scope.text=null;
-            $scope.menuIt = null;
+            $scope.text = null;
+            $scope.menuItm = null;
             $scope.choices = null;
             $scope.related = null;
         };
     };
     $scope.toggleRelated = (event, relatedItem) => {
         if (event.target.checked) {
-            $scope.relatedItem=relatedItem.name;
+            $scope.relatedItem = relatedItem.name;
             $scope.relatedChoices = relatedItem.choices;
         } else {
             $scope.relatedChoices = null;
-            $scope.relatedItem=null;
-            $scope.relatedChoices=null;
+            $scope.relatedItem = null;
+            $scope.relatedChoices = null;
         };
     };
-    
+
     $scope.menuItems = [
         {
             name: 'Salad',

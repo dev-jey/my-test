@@ -8,7 +8,7 @@ False
 
 3- If you have a &lt;p&gt; element with font-size: 10rem, will the text be responsive when the user
 resizes / drags the browser window?
-True
+False
 
 4- The pseudo class: checked will select inputs with type radio or checkbox, but not &lt;option&gt;
 elements.
