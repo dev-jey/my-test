@@ -4,12 +4,18 @@ const myApp = angular.module("myApp", []);
 
 myApp.controller("mainController", ($scope) => {
     $scope.welcomeMessage = "Welcome To The Restaurant";
-    $scope.toggleSelection = (event, choice, menuItem) => {
+    $scope.toggleSelection = (event, choice, menuItem, relatedItem) => {
         if (event.target.checked) {
-            $scope.menuItm = menuItem.name;
-            if (choice == 'Greek' || choice == "Minestrone") {
-                $scope.text = "You might also like"
-                $scope.related = menuItem.related;
+            if (menuItem) {
+                $scope.menuItm = menuItem.name;
+                if (choice == 'Greek' || choice == "Minestrone") {
+                    $scope.text = "You might also like"
+                    $scope.related = menuItem.related;
+                }
+            }
+            if (relatedItem) {
+                $scope.relatedItem = relatedItem.name;
+                $scope.relatedChoices = relatedItem.choices;
             }
             $scope.choices = menuItem.choices;
         } else {
@@ -17,16 +23,8 @@ myApp.controller("mainController", ($scope) => {
             $scope.menuItm = null;
             $scope.choices = null;
             $scope.related = null;
-        };
-    };
-    $scope.toggleRelated = (event, relatedItem) => {
-        if (event.target.checked) {
-            $scope.relatedItem = relatedItem.name;
-            $scope.relatedChoices = relatedItem.choices;
-        } else {
             $scope.relatedChoices = null;
             $scope.relatedItem = null;
-            $scope.relatedChoices = null;
         };
     };
 
